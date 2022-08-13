@@ -2,12 +2,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
-  namespace: final1
+  namespace: final
   labels:
     name: flask-
   annotations:
     # Container Image Automated Updates
-    flux.weave.works/automated: "true"
+    #flux.weave.works/automated: "true"
     # do not apply this manifest on the cluster
     #flux.weave.works/ignore: "true"
 spec:
@@ -42,11 +42,11 @@ spec:
             configMapKeyRef:
               name: my-config
               key: url1
-        #- name: appurl2
-         # valueFrom: 
-          #  configMapKeyRef:
-           #   name: my-config
-            #  key: url2
+        - name: appurl2
+          valueFrom: 
+            configMapKeyRef:
+              name: my-config
+              key: url2
         volumeMounts:
         - name: app-secret-volumes
           mountPath: "/opt/app-secret-volumes"

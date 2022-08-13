@@ -2,9 +2,9 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: my-config
-  namespace: final1
+  namespace: final
 data:
-    #url1: "https://ragbings3.s3.amazonaws.com/success.jpg"
-    #url2: "https://ragbings3.s3.amazonaws.com/failed.png
-    url1: "https://ragbings3.s3.amazonaws.com/lp.jpg"
+    url1: "https://ragbings3.s3.amazonaws.com/success.jpg"
+    url2: "https://ragbings3.s3.amazonaws.com/failed.png"
+    #url1: "https://ragbings3.s3.amazonaws.com/lp.jpg"
     Group: group8

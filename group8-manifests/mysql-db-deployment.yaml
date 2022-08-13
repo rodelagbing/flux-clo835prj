@@ -2,12 +2,12 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mysql
-  namespace: final1
+  namespace: final
   labels:
     name: 
   annotations:
     # Container Image Automated Updates
-    flux.weave.works/automated: "true"
+    #flux.weave.works/automated: "true"
     # do not apply this manifest on the cluster
     #flux.weave.works/ignore: "true"
 spec:
