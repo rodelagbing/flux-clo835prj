@@ -2,7 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: mysql
-  namespace: final
+  namespace: final1
 spec:
   selector:
     name: mysql

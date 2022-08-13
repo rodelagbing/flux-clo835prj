@@ -2,9 +2,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
-  namespace: final
+  namespace: final1
   labels:
-    name: flask-app
+    name: flask-
+  annotations:
+    # Container Image Automated Updates
+    flux.weave.works/automated: "true"
+    # do not apply this manifest on the cluster
+    #flux.weave.works/ignore: "true"
 spec:
   selector:
     matchLabels:

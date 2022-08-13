@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: final
+  name: final1
   labels:
     owner: Group8
     desc: clo835-Final-Project

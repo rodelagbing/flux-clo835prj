@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: my-config
-  namespace: final
+  namespace: final1
 data:
     #url1: "https://ragbings3.s3.amazonaws.com/success.jpg"
     #url2: "https://ragbings3.s3.amazonaws.com/failed.png

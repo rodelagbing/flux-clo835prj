@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: mysql-pv-claim
-  namespace: final
+  namespace: final1
 spec:
   storageClassName: standard
   resources:
