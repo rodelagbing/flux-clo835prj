@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: webapp-service
+  namespace: final
+  labels:
+    name: flask-app
+spec:
+  selector:
+    name: flask-app
+  type: NodePort
+  ports:
+  - port: 80
+    targetPort: 81
