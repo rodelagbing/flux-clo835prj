@@ -1,21 +1,17 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
   namespace: final
   labels:
-    name: flask
+    name: flask-app
   annotations:
-    # Container Image Automated Updates
     flux.weave.works/automated: "true"
-    # do not apply this manifest on the cluster
-    #flux.weave.works/ignore: "true"
 spec:
   selector:
     matchLabels:
       name: flask-app
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
@@ -24,7 +20,7 @@ spec:
       serviceAccountName: clo835
       containers:
       - name: flaskapp
-        image: 309610357262.dkr.ecr.us-east-1.amazonaws.com/clo835prj:v.1
+        image: 295023233971.dkr.ecr.us-east-1.amazonaws.com/clo835_finalproject:v1.3 #update with the group ecr repo
         ports:
         - containerPort: 81
         resources:
@@ -34,17 +30,17 @@ spec:
             cpu: 200m
         env:
         - name: clo835Group
-          valueFrom:
+          valueFrom: 
             configMapKeyRef:
               name: my-config
               key: Group
         - name: appurl1
-          valueFrom:
+          valueFrom: 
             configMapKeyRef:
               name: my-config
               key: url1
         - name: appurl2
-          valueFrom:
+          valueFrom: 
             configMapKeyRef:
               name: my-config
               key: url2
@@ -53,9 +49,9 @@ spec:
           mountPath: "/opt/app-secret-volumes"
           readOnly: true
         envFrom:
-        - secretRef:
+         - secretRef:
             name: app-secret
       volumes:
-      - name: app-secret-volumes
-        secret:
+       - name: app-secret-volumes
+         secret:
           secretName: app-secret
