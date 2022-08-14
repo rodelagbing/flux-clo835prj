@@ -14,7 +14,7 @@ spec:
   selector:
     matchLabels:
       name: flask-app
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
@@ -23,7 +23,7 @@ spec:
       serviceAccountName: clo835
       containers:
       - name: flaskapp
-        image: 309610357262.dkr.ecr.us-east-1.amazonaws.com/clo835prj:v.1
+        image: 309610357262.dkr.ecr.us-east-1.amazonaws.com/clo835prj:latest
         ports:
         - containerPort: 81
         resources:
